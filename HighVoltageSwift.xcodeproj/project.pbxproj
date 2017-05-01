@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9053F3951EB7D314005EC1B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3941EB7D314005EC1B3 /* AppDelegate.swift */; };
+		9053F3971EB7D314005EC1B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3961EB7D314005EC1B3 /* ViewController.swift */; };
+		9053F39A1EB7D314005EC1B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053F3981EB7D314005EC1B3 /* Main.storyboard */; };
+		9053F39C1EB7D314005EC1B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9053F39B1EB7D314005EC1B3 /* Assets.xcassets */; };
+		9053F39F1EB7D314005EC1B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */; };
+		9053F3AA1EB7D314005EC1B3 /* HighVoltageSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3A91EB7D314005EC1B3 /* HighVoltageSwiftTests.swift */; };
+		9053F3B51EB7D314005EC1B3 /* HighVoltageSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3B41EB7D314005EC1B3 /* HighVoltageSwiftUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9053F3A61EB7D314005EC1B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9053F3891EB7D314005EC1B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9053F3901EB7D314005EC1B3;
+			remoteInfo = HighVoltageSwift;
+		};
+		9053F3B11EB7D314005EC1B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9053F3891EB7D314005EC1B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9053F3901EB7D314005EC1B3;
+			remoteInfo = HighVoltageSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9053F3911EB7D314005EC1B3 /* HighVoltageSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighVoltageSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9053F3941EB7D314005EC1B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9053F3961EB7D314005EC1B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9053F3991EB7D314005EC1B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9053F39B1EB7D314005EC1B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9053F39E1EB7D314005EC1B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9053F3A01EB7D314005EC1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9053F3A51EB7D314005EC1B3 /* HighVoltageSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighVoltageSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9053F3A91EB7D314005EC1B3 /* HighVoltageSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighVoltageSwiftTests.swift; sourceTree = "<group>"; };
+		9053F3AB1EB7D314005EC1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9053F3B01EB7D314005EC1B3 /* HighVoltageSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HighVoltageSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9053F3B41EB7D314005EC1B3 /* HighVoltageSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighVoltageSwiftUITests.swift; sourceTree = "<group>"; };
+		9053F3B61EB7D314005EC1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9053F38E1EB7D314005EC1B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3A21EB7D314005EC1B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3AD1EB7D314005EC1B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9053F3881EB7D314005EC1B3 = {
+			isa = PBXGroup;
+			children = (
+				9053F3931EB7D314005EC1B3 /* HighVoltageSwift */,
+				9053F3A81EB7D314005EC1B3 /* HighVoltageSwiftTests */,
+				9053F3B31EB7D314005EC1B3 /* HighVoltageSwiftUITests */,
+				9053F3921EB7D314005EC1B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9053F3921EB7D314005EC1B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9053F3911EB7D314005EC1B3 /* HighVoltageSwift.app */,
+				9053F3A51EB7D314005EC1B3 /* HighVoltageSwiftTests.xctest */,
+				9053F3B01EB7D314005EC1B3 /* HighVoltageSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9053F3931EB7D314005EC1B3 /* HighVoltageSwift */ = {
+			isa = PBXGroup;
+			children = (
+				9053F3941EB7D314005EC1B3 /* AppDelegate.swift */,
+				9053F3961EB7D314005EC1B3 /* ViewController.swift */,
+				9053F3981EB7D314005EC1B3 /* Main.storyboard */,
+				9053F39B1EB7D314005EC1B3 /* Assets.xcassets */,
+				9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */,
+				9053F3A01EB7D314005EC1B3 /* Info.plist */,
+			);
+			path = HighVoltageSwift;
+			sourceTree = "<group>";
+		};
+		9053F3A81EB7D314005EC1B3 /* HighVoltageSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				9053F3A91EB7D314005EC1B3 /* HighVoltageSwiftTests.swift */,
+				9053F3AB1EB7D314005EC1B3 /* Info.plist */,
+			);
+			path = HighVoltageSwiftTests;
+			sourceTree = "<group>";
+		};
+		9053F3B31EB7D314005EC1B3 /* HighVoltageSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9053F3B41EB7D314005EC1B3 /* HighVoltageSwiftUITests.swift */,
+				9053F3B61EB7D314005EC1B3 /* Info.plist */,
+			);
+			path = HighVoltageSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9053F3901EB7D314005EC1B3 /* HighVoltageSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9053F3B91EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwift" */;
+			buildPhases = (
+				9053F38D1EB7D314005EC1B3 /* Sources */,
+				9053F38E1EB7D314005EC1B3 /* Frameworks */,
+				9053F38F1EB7D314005EC1B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HighVoltageSwift;
+			productName = HighVoltageSwift;
+			productReference = 9053F3911EB7D314005EC1B3 /* HighVoltageSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9053F3A41EB7D314005EC1B3 /* HighVoltageSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9053F3BC1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftTests" */;
+			buildPhases = (
+				9053F3A11EB7D314005EC1B3 /* Sources */,
+				9053F3A21EB7D314005EC1B3 /* Frameworks */,
+				9053F3A31EB7D314005EC1B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9053F3A71EB7D314005EC1B3 /* PBXTargetDependency */,
+			);
+			name = HighVoltageSwiftTests;
+			productName = HighVoltageSwiftTests;
+			productReference = 9053F3A51EB7D314005EC1B3 /* HighVoltageSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9053F3AF1EB7D314005EC1B3 /* HighVoltageSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9053F3BF1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftUITests" */;
+			buildPhases = (
+				9053F3AC1EB7D314005EC1B3 /* Sources */,
+				9053F3AD1EB7D314005EC1B3 /* Frameworks */,
+				9053F3AE1EB7D314005EC1B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9053F3B21EB7D314005EC1B3 /* PBXTargetDependency */,
+			);
+			name = HighVoltageSwiftUITests;
+			productName = HighVoltageSwiftUITests;
+			productReference = 9053F3B01EB7D314005EC1B3 /* HighVoltageSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9053F3891EB7D314005EC1B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Shane Nelson";
+				TargetAttributes = {
+					9053F3901EB7D314005EC1B3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5CZ45M6538;
+						ProvisioningStyle = Automatic;
+					};
+					9053F3A41EB7D314005EC1B3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5CZ45M6538;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9053F3901EB7D314005EC1B3;
+					};
+					9053F3AF1EB7D314005EC1B3 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5CZ45M6538;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9053F3901EB7D314005EC1B3;
+					};
+				};
+			};
+			buildConfigurationList = 9053F38C1EB7D314005EC1B3 /* Build configuration list for PBXProject "HighVoltageSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9053F3881EB7D314005EC1B3;
+			productRefGroup = 9053F3921EB7D314005EC1B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9053F3901EB7D314005EC1B3 /* HighVoltageSwift */,
+				9053F3A41EB7D314005EC1B3 /* HighVoltageSwiftTests */,
+				9053F3AF1EB7D314005EC1B3 /* HighVoltageSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9053F38F1EB7D314005EC1B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053F39F1EB7D314005EC1B3 /* LaunchScreen.storyboard in Resources */,
+				9053F39C1EB7D314005EC1B3 /* Assets.xcassets in Resources */,
+				9053F39A1EB7D314005EC1B3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3A31EB7D314005EC1B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3AE1EB7D314005EC1B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9053F38D1EB7D314005EC1B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053F3971EB7D314005EC1B3 /* ViewController.swift in Sources */,
+				9053F3951EB7D314005EC1B3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3A11EB7D314005EC1B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053F3AA1EB7D314005EC1B3 /* HighVoltageSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9053F3AC1EB7D314005EC1B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9053F3B51EB7D314005EC1B3 /* HighVoltageSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9053F3A71EB7D314005EC1B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9053F3901EB7D314005EC1B3 /* HighVoltageSwift */;
+			targetProxy = 9053F3A61EB7D314005EC1B3 /* PBXContainerItemProxy */;
+		};
+		9053F3B21EB7D314005EC1B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9053F3901EB7D314005EC1B3 /* HighVoltageSwift */;
+			targetProxy = 9053F3B11EB7D314005EC1B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9053F3981EB7D314005EC1B3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9053F3991EB7D314005EC1B3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9053F39E1EB7D314005EC1B3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9053F3B71EB7D314005EC1B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9053F3B81EB7D314005EC1B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9053F3BA1EB7D314005EC1B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9053F3BB1EB7D314005EC1B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9053F3BD1EB7D314005EC1B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HighVoltageSwift.app/HighVoltageSwift";
+			};
+			name = Debug;
+		};
+		9053F3BE1EB7D314005EC1B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HighVoltageSwift.app/HighVoltageSwift";
+			};
+			name = Release;
+		};
+		9053F3C01EB7D314005EC1B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HighVoltageSwift;
+			};
+			name = Debug;
+		};
+		9053F3C11EB7D314005EC1B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5CZ45M6538;
+				INFOPLIST_FILE = HighVoltageSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "The-Iron-Yard.HighVoltageSwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HighVoltageSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9053F38C1EB7D314005EC1B3 /* Build configuration list for PBXProject "HighVoltageSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053F3B71EB7D314005EC1B3 /* Debug */,
+				9053F3B81EB7D314005EC1B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9053F3B91EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053F3BA1EB7D314005EC1B3 /* Debug */,
+				9053F3BB1EB7D314005EC1B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9053F3BC1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053F3BD1EB7D314005EC1B3 /* Debug */,
+				9053F3BE1EB7D314005EC1B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9053F3BF1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9053F3C01EB7D314005EC1B3 /* Debug */,
+				9053F3C11EB7D314005EC1B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9053F3891EB7D314005EC1B3 /* Project object */;
+}
