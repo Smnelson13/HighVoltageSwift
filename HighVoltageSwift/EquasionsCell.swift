@@ -10,6 +10,8 @@ import UIKit
 
 
 class EquasionsCell: UITableViewCell
+  
+
 {
   @IBOutlet weak var calculationTextField: UITextField!
 
