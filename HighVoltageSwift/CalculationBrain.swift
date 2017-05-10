@@ -8,10 +8,15 @@
 
 import Foundation
 
- class CalculationsBrain: NSObject
+class ElectricityConversions
 {
   var allValuesFound: Bool
-  var delegate: CalculationsBrainDelegate
+  var delegate: ElectricityConversionsDelegate?
+  
+  var ampsString: String
+  var ohmsString: String
+  var wattsString: String
+  var voltsString: String
   
   init()
   {
@@ -21,16 +26,8 @@ import Foundation
     wattsString = ""
     voltsString = ""
   }
-
-
- // var calculationToMake = Calculate.amps
-  // if the app crashes just check here....
-  var ampsString: String
-  var ohmsString: String
-  var wattsString: String
-  var voltsString: String
-
-  public func calculateIfPossible()
+  
+  func findOtherValuesIfPossible()
   {
     var count = 0
     if ampsString != ""
@@ -53,9 +50,9 @@ import Foundation
     {
       calculateAllValues()
     }
-
+    
   }
-
+  
   fileprivate func calculateAllValues()
   {
     var amps = 0.0, ohms = 0.0, volts = 0.0, watts = 0.0

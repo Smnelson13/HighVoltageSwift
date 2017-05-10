@@ -8,219 +8,250 @@
 
 import UIKit
 
-class EquasionsTableViewController:
-  UITableViewController,
-  UIPopoverPresentationControllerDelegate,
-  UITextFieldDelegate
-  
-  
+protocol ValueTypesViewControllerDelegate
 {
-  var allCalculations = [String: String]()
-  var remainingCalculations = [String]()
-  var visibleCalcualtions = [String]()
+  func valueTypeWasChosen(_ chosenValueType: String)
+}
+
+protocol ElectricityConversionsDelegate
+{
+  func valuesWereCalculated()
+}
+
+class EquasionsTableViewController: UITableViewController, ValueTypesViewControllerDelegate, ElectricityConversionsDelegate, UITextFieldDelegate, UIPopoverPresentationControllerDelegate
+{
   
-  var voltsTextField: UITextField?
-  var ampsTextField: UITextField?
-  var wattsTextField: UITextField?
-  var ohmsTextField: UITextField?
+  @IBOutlet weak var clearBarButtonItem: UIBarButtonItem!
+  @IBOutlet weak var addValueTypeBarButtonItem: UIBarButtonItem!
   
-  var brain = CalculationsBrain()
+  var currentTextField: UITextField?
+  var resistanceTextField: UITextField?
+  var voltageTextField: UITextField?
+  var powerTextField: UITextField?
   
+  var converter: ElectricityConversions?
   
+  var tableData = [String]()
+  var valueTypes: Dictionary<String, String> = ["Amps": "CurrentCell", "Ohms": "ResistanceCell", "Volts": "VoltageCell", "Watts": "PowerCell"]
   
   override func viewDidLoad()
   {
-    tableView?.separatorStyle = .none
-    
     super.viewDidLoad()
-    
-    remainingCalculations = ["watts", "volts", "amps", "ohms"]
-    
-    for value in remainingCalculations
-    {
-      allCalculations[value.capitalized] = value
-    }
-
+    self.title = "High Voltage"
   }
-
+  
   override func didReceiveMemoryWarning()
   {
-      super.didReceiveMemoryWarning()
-      // Dispose of any resources that can be recreated.
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
   }
-
+  
   // MARK: - Table view data source
-
+  
   override func numberOfSections(in tableView: UITableView) -> Int
   {
-      // #warning Incomplete implementation, return the number of sections
-      return 1
+    return 1
   }
-
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-      // #warning Incomplete implementation, return the number of rows
-      return 0 
+    return tableData.count
   }
-
   
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "EquasionCell", for: indexPath) as! EquasionsCell
-    
-    var calculationName = visibleCalcualtions[indexPath.row]
-
-    cell.calculationLabel.text = calculationName
-    if calculationName == "Volts"
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+  {
+    if tableData.count > 0
     {
-      voltsTextField = cell.calculationTextField
+      return "Enter two values"
     }
     else
     {
-      if calculationName == "Watts"
-      {
-        wattsTextField = cell.calculationTextField
-      }
-      else
-      {
-        if calculationName == "Ohms"
-        {
-          ohmsTextField = cell.calculationTextField
-        }
-        else
-        {
-          if calculationName == "Amps"
-          {
-            ampsTextField = cell.calculationTextField
-          }
-        }
-      }
+      return ""
     }
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
-      if textField.text == ""
-      {
-        if textField == voltsTextField
-        {
-          brain.v = Int((voltsTextField?.text)!)
-        }
-        else
-        {
-          if textField == ampsTextField
-          {
-            brain.i = Int((voltsTextField?.text)!)
-          }
-          else
-          {
-            if textField == wattsTextField
-            {
-              brain.p = Int((wattsTextField?.text)!)
-            }
-            else
-            {
-              if textField == ohmsTextField
-              {
-                brain.r = Int((ohmsTextField?.text)!)
-              }
-            }
-          }
-        }
-      }
-    }
-    
-    brain.calculateIfPossible()
-    
-    
-      return cell
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    if segue.identifier == "AddCalculationPopoverSegue"
+    let identifier = tableData[indexPath.row]
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+    
+    let textField = cell.viewWithTag(1) as! UITextField
+    textField.text = ""
+    textField.delegate = self
+    textField.isUserInteractionEnabled = !converter!.allValuesFound
+    
+    switch identifier
     {
-      let calculationVC = segue.destination as! AddCalculationTableViewController
-      calculationVC.calculations = remainingCalculations
-      calculationVC.popoverPresentationController?.delegate = self
-      calculationVC.delegate = self
-      let contentHeight = CGFloat(44 * remainingCalculations.count)
-      calculationVC.preferredContentSize = CGSize(width: 200, height: contentHeight)
-    } else
-    {
-      print("Error")
+    case "CurrentCell":
+      currentTextField = textField
+      if converter?.ampsString != ""
+      {
+        textField.text = converter?.ampsString
+      }
+      
+    case "ResistanceCell":
+      resistanceTextField = textField
+      if converter?.ohmsString != ""
+      {
+        textField.text = converter?.ohmsString
+      }
+      
+    case "PowerCell":
+      powerTextField = textField
+      if converter?.wattsString != ""
+      {
+        textField.text = converter?.wattsString
+      }
+      
+    case "VoltageCell":
+      voltageTextField = textField
+      if converter?.voltsString != ""
+      {
+        textField.text = converter?.voltsString
+      }
+      
+    default:
+      print("")
     }
     
+    let keys = (valueTypes as NSDictionary).allKeys(for: identifier) as! [String]
+    let keyToRemove = keys[0]
+    valueTypes.removeValue(forKey: keyToRemove)
     
-    func calculationWasChosen(chosenCalculation: String)
+    textField.becomeFirstResponder()
+    
+    return cell
+  }
+  
+  // MARK: - UITextField delegate
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
-    self.navigationController?.dismiss(animated: true	, completion: nil)
-    visibleCalcualtions.append(chosenCalculation)
-    remainingCalculations.remove(chosenCalculation)
-    
-    if remainingCalculations.count == 0
+    var rc = false
+    if textField.text != ""
     {
-      self.navigationItem.rightBarButtonItem?.isEnabled = false
+      rc = true
+      if textField == currentTextField
+      {
+        converter?.ampsString = textField.text!
+      }
+      if textField == resistanceTextField
+      {
+        converter?.ohmsString = textField.text!
+      }
+      if textField == voltageTextField
+      {
+        converter?.voltsString = textField.text!
+      }
+      if textField == powerTextField
+      {
+        converter?.wattsString = textField.text!
+      }
     }
-  }
-  
-  
-  
-  
-  
-  }
-
-  /*
-  // Override to support conditional editing of the table view.
-  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-      // Return false if you do not want the specified item to be editable.
-      return true
-  }
-  */
-
-  /*
-  // Override to support editing the table view.
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-      if editingStyle == .delete {
-          // Delete the row from the data source
-          tableView.deleteRows(at: [indexPath], with: .fade)
-      } else if editingStyle == .insert {
-          // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-      }    
-  }
-  */
-
-  /*
-  // Override to support rearranging the table view.
-  override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-  }
-  */
-
-  /*
-  // Override to support conditional rearranging of the table view.
-  override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-      // Return false if you do not want the item to be re-orderable.
-      return true
-  }
-  */
-
-  /*
-  // MARK: - Navigation
-
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // Get the new view controller using segue.destinationViewController.
-      // Pass the selected object to the new view controller.
-  }
-  */
-
-}
-
-extension Array where Element: Equatable {
-  mutating func remove(_ element: Element) {
-    if let index = self.index(of: element) {
-      self.remove(at: index)
+    
+    if rc
+    {
+      textField.resignFirstResponder()
     }
+    
+    converter?.findOtherValuesIfPossible()
+    
+    return rc
+  }
+  
+  // MARK: - ValueTypesViewController delegate
+  
+  func valueTypeWasChosen(_ chosenValueType: String)
+  {
+    navigationController?.dismiss(animated: true, completion: nil)
+    if converter == nil
+    {
+      converter = ElectricityConversions()
+      converter?.delegate = self
+    }
+    
+    let cellIdentifier = valueTypes[chosenValueType]
+    tableData.append(cellIdentifier!)
+    if tableData.count == 2
+    {
+      addValueTypeBarButtonItem.isEnabled = false
+    }
+    
+    let row = (tableData as NSArray).index(of: cellIdentifier!)
+    tableView.insertRows(at: [IndexPath(row: row, section: 0)], with: .automatic)
+  }
+  
+  // MARK: - ElectricityConversions delegate
+  
+  func valuesWereCalculated()
+  {
+    resetValueTypesDictionary()
+    
+    if voltageTextField == nil
+    {
+      let cellIdentifier = valueTypes["Volts"]
+      tableData.append(cellIdentifier!)
+    }
+    if currentTextField == nil
+    {
+      let cellIdentifier = valueTypes["Amps"]
+      tableData.append(cellIdentifier!)
+    }
+    if resistanceTextField == nil
+    {
+      let cellIdentifier = valueTypes["Ohms"]
+      tableData.append(cellIdentifier!)
+    }
+    if powerTextField == nil
+    {
+      let cellIdentifier = valueTypes["Watts"]
+      tableData.append(cellIdentifier!)
+    }
+    
+    tableView.reloadData()
+  }
+  
+  // MARK: - Action Handlers
+  
+  @IBAction func clearTransaction(_ sender: UIBarButtonItem)
+  {
+    tableData.removeAll(keepingCapacity: true)
+    addValueTypeBarButtonItem.isEnabled = true
+    converter = nil
+    voltageTextField = nil
+    currentTextField = nil
+    resistanceTextField = nil
+    powerTextField = nil
+    resetValueTypesDictionary()
+    tableView.reloadData()
+  }
+  
+  @IBAction func addNewElectricityType(sender: UIBarButtonItem)
+  {
+    let valueTypesVC = ValueTypesTableViewController(style: .plain)
+    valueTypesVC.modalPresentationStyle = .popover
+    valueTypesVC.delegate = self
+    valueTypesVC.popoverPresentationController?.delegate = self
+    valueTypesVC.popoverPresentationController?.barButtonItem = sender
+    let contentHeight = 44.0 * CGFloat(valueTypes.count)
+    valueTypesVC.preferredContentSize = CGSize(width: CGFloat(100.0), height: contentHeight)
+    valueTypesVC.valueTypes = Array(valueTypes.keys)
+    present(valueTypesVC, animated: true, completion: nil)
+  }
+  
+  // MARK: - UIPopoverPresentation delegate
+  
+  func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle
+  {
+    return .none
+  }
+  
+  // MARK: - Private methods
+  
+  func resetValueTypesDictionary()
+  {
+    valueTypes.removeAll(keepingCapacity: true)
+    valueTypes = ["Amps": "CurrentCell", "Ohms": "ResistanceCell", "Volts": "VoltageCell", "Watts": "PowerCell"]
   }
 }
-

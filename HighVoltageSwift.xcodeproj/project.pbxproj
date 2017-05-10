@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9053F3951EB7D314005EC1B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3941EB7D314005EC1B3 /* AppDelegate.swift */; };
-		9053F39A1EB7D314005EC1B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053F3981EB7D314005EC1B3 /* Main.storyboard */; };
 		9053F39C1EB7D314005EC1B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9053F39B1EB7D314005EC1B3 /* Assets.xcassets */; };
 		9053F39F1EB7D314005EC1B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */; };
 		9053F3AA1EB7D314005EC1B3 /* HighVoltageSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3A91EB7D314005EC1B3 /* HighVoltageSwiftTests.swift */; };
@@ -17,6 +16,7 @@
 		9053F3C51EB7D643005EC1B3 /* EquasionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3C41EB7D643005EC1B3 /* EquasionsTableViewController.swift */; };
 		9053F3C71EB7D697005EC1B3 /* AddCalculationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3C61EB7D697005EC1B3 /* AddCalculationTableViewController.swift */; };
 		9053F3C91EB7D83F005EC1B3 /* EquasionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9053F3C81EB7D83F005EC1B3 /* EquasionsCell.swift */; };
+		90AE8AA51EC2C90C0002B207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90AE8AA41EC2C90C0002B207 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		9053F3911EB7D314005EC1B3 /* HighVoltageSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighVoltageSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9053F3941EB7D314005EC1B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9053F3991EB7D314005EC1B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9053F39B1EB7D314005EC1B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9053F39E1EB7D314005EC1B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9053F3A01EB7D314005EC1B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		9053F3C41EB7D643005EC1B3 /* EquasionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquasionsTableViewController.swift; path = ../EquasionsTableViewController.swift; sourceTree = "<group>"; };
 		9053F3C61EB7D697005EC1B3 /* AddCalculationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCalculationTableViewController.swift; sourceTree = "<group>"; };
 		9053F3C81EB7D83F005EC1B3 /* EquasionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquasionsCell.swift; sourceTree = "<group>"; };
+		90AE8AA41EC2C90C0002B207 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 				9053F3C61EB7D697005EC1B3 /* AddCalculationTableViewController.swift */,
 				9053F3C21EB7D495005EC1B3 /* CalculationBrain.swift */,
 				9053F3C81EB7D83F005EC1B3 /* EquasionsCell.swift */,
-				9053F3981EB7D314005EC1B3 /* Main.storyboard */,
+				90AE8AA41EC2C90C0002B207 /* Main.storyboard */,
 				9053F39B1EB7D314005EC1B3 /* Assets.xcassets */,
 				9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */,
 				9053F3A01EB7D314005EC1B3 /* Info.plist */,
@@ -243,9 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90AE8AA51EC2C90C0002B207 /* Main.storyboard in Resources */,
 				9053F39F1EB7D314005EC1B3 /* LaunchScreen.storyboard in Resources */,
 				9053F39C1EB7D314005EC1B3 /* Assets.xcassets in Resources */,
-				9053F39A1EB7D314005EC1B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +310,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9053F3981EB7D314005EC1B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9053F3991EB7D314005EC1B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9053F39D1EB7D314005EC1B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -529,6 +521,7 @@
 				9053F3BB1EB7D314005EC1B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9053F3BC1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +530,7 @@
 				9053F3BE1EB7D314005EC1B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9053F3BF1EB7D314005EC1B3 /* Build configuration list for PBXNativeTarget "HighVoltageSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +539,7 @@
 				9053F3C11EB7D314005EC1B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
